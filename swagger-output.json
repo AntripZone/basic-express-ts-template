@@ -11,15 +11,18 @@
     "http"
   ],
   "paths": {
-    "/": {
+    "/menu/": {
       "get": {
         "tags": [
-          "Tests"
+          "Menu Productos"
         ],
         "description": "",
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
