@@ -1,10 +1,10 @@
 import express, { type Request, type Response } from "express"; 
 import swaggerRouter from "./routes/swagger.router.js";
 import cors from "cors"
+import ProductosRoutes from "./routes/productoRoutes.js"
+import {pool} from "./config/db.js";
 
 const port = process.env.PORT; 
-
-
 
 const app = express();
 
@@ -22,6 +22,8 @@ app.get("/", (req: Request, res: Response) => {
         version: "1.0.0"
     });
 });
+
+app.use("/menu", ProductosRoutes);
 
 app.listen(port, () => {
     console.log(`URL: http://localhost:${port}`);
