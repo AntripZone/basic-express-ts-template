@@ -16,3 +16,24 @@ export async function getProductos(req:Request, res: Response) {
         });
     }  
 }
+
+export async function createProducto(req: Request, res: Response) {
+    try {
+        const { nombre, descrip, precio } = req.body;
+
+        const result = await pool.query(
+            "INSERT INTO productos (nombre, descrip, precio) VALUES ($1, $2, $3) RETURNING *;",
+            [nombre, descrip, precio]
+        );
+
+        res.status(201).json({
+            message: "Producto creado correctamente",
+            data: result.rows[0],
+        });
+    } catch (error) {
+        console.error("Error al insertar en PostgreSQL: ", error);
+        res.status(500).json({
+            message: "Error al conectar al Base de Datos.",
+        });
+    }
+}

@@ -23,7 +23,7 @@ app.get("/", (req: Request, res: Response) => {
     });
 });
 
-app.use("/menu", ProductosRoutes);
+app.use("/api", ProductosRoutes);
 
 app.listen(port, () => {
     console.log(`URL: http://localhost:${port}`);

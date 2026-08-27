@@ -12,7 +12,7 @@ const doc = {
 
 const outputFile = 'swagger-output.json';
 
-const endpointsFiles = ['./src/index.ts'];
+const endpointsFiles = ['./src/index.ts', './src/routes/productoRoutes.ts'];
 
 swaggerAutogen()(outputFile, endpointsFiles, doc).then(async () => {
     await import('../index.js');
