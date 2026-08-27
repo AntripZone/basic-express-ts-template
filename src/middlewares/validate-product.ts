@@ -5,9 +5,9 @@ export const productSchema = z.object({
     nombre: z
         .string({ message: "nombre debe ser un texto" })
         .min(1, "nombre no puede estar vacio"),
-    descrip: z
-        .string({ message: "descrip debe ser un texto" })
-        .min(1, "descrip no puede estar vacio"),
+    descripcion: z
+        .string({ message: "descripcion debe ser un texto" })
+        .min(1, "descripcion no puede estar vacia"),
     precio: z
         .number({ message: "precio debe ser un numero" })
         .positive("precio debe ser mayor a cero"),

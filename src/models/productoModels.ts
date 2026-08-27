@@ -80,7 +80,7 @@ export const ProductsModel = {
        SET nombre = $1,
            descrip = $2,
            precio = $3
-       WHERE id = $4
+       WHERE id_prod = $4
        RETURNING id_prod AS id, nombre, descrip AS descripcion, precio;`,
       [
         dato.nombre,
